@@ -7,6 +7,7 @@ export interface ApiResponse {
   image?: string;
   imageUrl?: string;
   url?: string;
+  raw?: any;
 }
 
 /**
@@ -17,21 +18,30 @@ export interface ApiResponse {
  * @throws Error if the request fails
  */
 export async function sendMessage(prompt: string, sessionId: string): Promise<ApiResponse> {
-  // Use the webhook controller to send the message with retry logic
-  const response: ControllerResponse = await sendWebhookMessage(prompt, sessionId);
+  try {
+    // Use the webhook controller to send the message with retry logic
+    const response: ControllerResponse = await sendWebhookMessage(prompt, sessionId, { isDevMode: true });
 
-  // Handle errors
-  if (!response.success || !response.data) {
-    if (response.error) {
-      // Log the error
-      logWebhookError(response.error);
-      throw new Error(response.error.message);
+    // Handle errors
+    if (!response.success || !response.data) {
+      if (response.error) {
+        // Log the error with detailed info
+        logWebhookError(response.error, true);
+        console.error('[API Error Details]', response.devInfo);
+        throw new Error(response.error.message);
+      }
+      throw new Error('Failed to get response from server');
     }
-    throw new Error('Failed to get response from server');
-  }
 
-  // Format the response for client display
-  return formatWebhookResponse(response.data);
+    // Format the response for client display
+    return formatWebhookResponse(response.data, true);
+  } catch (error: any) {
+    console.error('[SendMessage Error]', error);
+    if (error instanceof Error) {
+      throw error;
+    }
+    throw new Error(`Unexpected error: ${JSON.stringify(error)}`);
+  }
 }
 
 /**
