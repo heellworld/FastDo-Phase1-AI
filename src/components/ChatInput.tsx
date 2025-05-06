@@ -45,7 +45,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
         </button>
       </div>
       <div className="flex justify-center mt-1">
-        <p className="text-xs text-gray-400">Powered by <span className="text-[#0d47a1] font-medium">FastDo</span></p>
+        <p className="text-xs text-gray-400">Powered by <span className="text-[#0d47a1] font-medium">Fastdo</span></p>
       </div>
     </form>
   );

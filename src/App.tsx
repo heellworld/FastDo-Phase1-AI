@@ -44,7 +44,7 @@ function App() {
               type: "bot",
               content: {
                 type: "text",
-                content: "Xin chào! Tôi là trợ lý ảo của FastDo. Tôi có thể giúp gì cho bạn hôm nay?",
+                content: "Xin chào! Tôi là trợ lý ảo của Fastdo. Tôi có thể giúp gì cho bạn hôm nay?",
               },
             },
           ];

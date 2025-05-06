@@ -1,1 +1,1 @@
-# FastDo-Phase1-AI
+# Fastdo-Phase1-AI

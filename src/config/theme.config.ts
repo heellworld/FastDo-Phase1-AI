@@ -1,21 +1,21 @@
 /**
  * Theme Configuration cho ứng dụng Davas Chatbot
- * Dựa trên nhận diện thương hiệu FastDo
+ * Dựa trên nhận diện thương hiệu Fastdo
  */
 
 export const THEME_CONFIG = {
   colors: {
-    // Màu chính - dựa trên website FastDo
+    // Màu chính - dựa trên website Fastdo
     primary: {
       light: '#1e88e5',
-      main: '#0d47a1', // Màu chủ đạo của FastDo (xanh dương đậm)
+      main: '#0d47a1', // Màu chủ đạo của Fastdo (xanh dương đậm)
       dark: '#002171',
       contrast: '#ffffff',
     },
-    // Màu phụ - màu cam từ FastDo
+    // Màu phụ - màu cam từ Fastdo
     secondary: {
       light: '#ff9e40',
-      main: '#ff6d00', // Màu cam của FastDo
+      main: '#ff6d00', // Màu cam của Fastdo
       dark: '#c43c00',
       contrast: '#ffffff',
     },
@@ -35,7 +35,7 @@ export const THEME_CONFIG = {
     // Màu cho tin nhắn
     message: {
       user: {
-        background: '#0d47a1', // Màu chính của FastDo
+        background: '#0d47a1', // Màu chính của Fastdo
         text: '#ffffff',
       },
       bot: {
@@ -88,8 +88,8 @@ export const THEME_CONFIG = {
   },
   // Logo và ảnh
   assets: {
-    logo: 'https://fastdo.vn/wp-content/uploads/2024/08/logo-fastdo.svg',
-    favicon: 'https://fastdo.vn/wp-content/uploads/2022/07/cropped-F-32x32.png',
+    logo: 'https://Fastdo.vn/wp-content/uploads/2024/08/logo-Fastdo.svg',
+    favicon: 'https://Fastdo.vn/wp-content/uploads/2022/07/cropped-F-32x32.png',
   }
 };
 
